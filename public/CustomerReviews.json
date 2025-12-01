@@ -1,0 +1,122 @@
+[
+  {
+    "id": "5f47ac10b4f1c03e8c111001",
+    "user_email": "suni.chowdhury@example.com",
+    "userName": "Sunehra Chowdhury",
+    "delivery_email": "delivery2@example.com",
+    "ratings": 5,
+    "review": "Super fast delivery! My package arrived earlier than expected.",
+    "parcel_id": "5f47ac10b4f1c03e8c900101",
+    "pick_up_email": "pickup2@example.com",
+    "user_photoURL": "https://randomuser.me/api/portraits/women/81.jpg",
+    "date": "2024-04-22T10:15:00.000Z"
+  },
+  {
+    "id": "5f47ac10b4f1c03e8c111002",
+    "user_email": "nabila.haque@example.com",
+    "userName": "Nabila Haque",
+    "delivery_email": "delivery3@example.com",
+    "ratings": 4,
+    "review": "Good service, package handled carefully.",
+    "parcel_id": "5f47ac10b4f1c03e8c900102",
+    "pick_up_email": "pickup3@example.com",
+    "user_photoURL": "https://randomuser.me/api/portraits/women/65.jpg",
+    "date": "2024-03-12T13:45:00.000Z"
+  },
+  {
+    "id": "5f47ac10b4f1c03e8c111003",
+    "user_email": "tanvir.ahmed@example.com",
+    "userName": "Tanvir Ahmed",
+    "delivery_email": "delivery4@example.com",
+    "ratings": 4.8,
+    "review": "Very polite rider and smooth communication.",
+    "parcel_id": "5f47ac10b4f1c03e8c900103",
+    "pick_up_email": "pickup4@example.com",
+    "user_photoURL": "https://randomuser.me/api/portraits/men/72.jpg",
+    "date": "2024-05-18T09:20:00.000Z"
+  },
+  {
+    "id": "5f47ac10b4f1c03e8c111004",
+    "user_email": "maisha.khan@example.com",
+    "userName": "Maisha Khan",
+    "delivery_email": "delivery5@example.com",
+    "ratings": 4.2,
+    "review": "Delivery took a bit longer but overall good experience.",
+    "parcel_id": "5f47ac10b4f1c03e8c900104",
+    "pick_up_email": "pickup5@example.com",
+    "user_photoURL": "https://randomuser.me/api/portraits/women/70.jpg",
+    "date": "2024-06-05T16:10:00.000Z"
+  },
+  {
+    "id": "5f47ac10b4f1c03e8c111005",
+    "user_email": "fahim.islam@example.com",
+    "userName": "Fahim Islam",
+    "delivery_email": "delivery6@example.com",
+    "ratings": 5,
+    "review": "Amazing service! Will definitely use again.",
+    "parcel_id": "5f47ac10b4f1c03e8c900105",
+    "pick_up_email": "pickup6@example.com",
+    "user_photoURL": "https://randomuser.me/api/portraits/men/68.jpg",
+    "date": "2024-02-11T11:55:00.000Z"
+  },
+  {
+    "id": "5f47ac10b4f1c03e8c111006",
+    "user_email": "shaila.rahman@example.com",
+    "userName": "Shaila Rahman",
+    "delivery_email": "delivery7@example.com",
+    "ratings": 3.9,
+    "review": "Good packaging but delivery guy came a bit late.",
+    "parcel_id": "5f47ac10b4f1c03e8c900106",
+    "pick_up_email": "pickup7@example.com",
+    "user_photoURL": "https://randomuser.me/api/portraits/women/62.jpg",
+    "date": "2024-05-01T08:40:00.000Z"
+  },
+  {
+    "id": "5f47ac10b4f1c03e8c111007",
+    "user_email": "ashik.chowdhury@example.com",
+    "userName": "Ashik Chowdhury",
+    "delivery_email": "delivery8@example.com",
+    "ratings": 4.7,
+    "review": "Smooth delivery and excellent customer support.",
+    "parcel_id": "5f47ac10b4f1c03e8c900107",
+    "pick_up_email": "pickup8@example.com",
+    "user_photoURL": "https://randomuser.me/api/portraits/men/66.jpg",
+    "date": "2024-04-09T12:05:00.000Z"
+  },
+  {
+    "id": "5f47ac10b4f1c03e8c111008",
+    "user_email": "tanjila.hossain@example.com",
+    "userName": "Tanjila Hossain",
+    "delivery_email": "delivery9@example.com",
+    "ratings": 4.3,
+    "review": "Package was delivered safely without any issues.",
+    "parcel_id": "5f47ac10b4f1c03e8c900108",
+    "pick_up_email": "pickup9@example.com",
+    "user_photoURL": "https://randomuser.me/api/portraits/women/58.jpg",
+    "date": "2024-05-28T15:25:00.000Z"
+  },
+  {
+    "id": "5f47ac10b4f1c03e8c111009",
+    "user_email": "rifat.haque@example.com",
+    "userName": "Rifat Haque",
+    "delivery_email": "delivery10@example.com",
+    "ratings": 4.9,
+    "review": "Quick response and fast drop-off. Loved the experience!",
+    "parcel_id": "5f47ac10b4f1c03e8c900109",
+    "pick_up_email": "pickup10@example.com",
+    "user_photoURL": "https://randomuser.me/api/portraits/men/74.jpg",
+    "date": "2024-03-02T09:30:00.000Z"
+  },
+  {
+    "id": "5f47ac10b4f1c03e8c111010",
+    "user_email": "labiba.sultana@example.com",
+    "userName": "Labiba Sultana",
+    "delivery_email": "delivery11@example.com",
+    "ratings": 4.6,
+    "review": "Reliable service and friendly rider. Highly recommended.",
+    "parcel_id": "5f47ac10b4f1c03e8c900110",
+    "pick_up_email": "pickup11@example.com",
+    "user_photoURL": "https://randomuser.me/api/portraits/women/75.jpg",
+    "date": "2024-06-10T17:50:00.000Z"
+  }
+]

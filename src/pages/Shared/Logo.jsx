@@ -1,9 +1,10 @@
 import React from 'react'
+import { NavLink } from 'react-router'
 
 function Logo() {
   return (
     <div>
-      <a className="btn btn-ghost text-xl flex items-center gap-2">
+      <NavLink to='/' className="btn btn-ghost text-xl flex items-center gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -19,7 +20,7 @@ function Logo() {
           />
         </svg>
         QuickDeliver
-      </a>
+      </NavLink>
     </div>
   )
 }

@@ -56,8 +56,9 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end gap-3">
+          <NavLink to='/login' className="btn bg-green-300">Login</NavLink>
+          <NavLink to='/register' className="btn bg-blue-300">Register</NavLink>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form'
+import useAuth from '../../hooks/useAuth'
 
 function Register() {
   const {
@@ -8,8 +9,17 @@ function Register() {
     formState: { errors },
   } = useForm()
 
+  const { registerUser } = useAuth()
+
   const handleRegistration = (data) => {
     console.log(data)
+    registerUser(data.email, data.password)
+      .then((result) => {
+        console.log(result.user)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   return (

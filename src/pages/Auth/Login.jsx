@@ -10,11 +10,21 @@ function Login() {
     formState: { errors },
   } = useForm()
 
-  const { login } = useAuth()
+  const { login, signInWithGoogle } = useAuth()
 
   const handlelogin = (data) => {
     console.log(data)
     login(data.email, data.password)
+      .then((result) => {
+        console.log(result.user)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
+  const handleGoogleLogin = () => {
+    signInWithGoogle()
       .then((result) => {
         console.log(result.user)
       })
@@ -30,7 +40,7 @@ function Login() {
           <img
             src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1200"
             alt="Login"
-            className="w-56 opacity-90"
+            className="w-56 rounded-2xl opacity-90"
           />
         </div>
 
@@ -64,7 +74,9 @@ function Login() {
                 {...register('password', { required: true })}
               />
               {errors.password?.type === 'required' && (
-                <p className="text-red-500" role="alert">Password is required</p>
+                <p className="text-red-500" role="alert">
+                  Password is required
+                </p>
               )}
             </div>
 
@@ -72,9 +84,21 @@ function Login() {
               Login
             </button>
 
+            <button
+              onClick={handleGoogleLogin}
+              type="button"
+              className="w-full py-2 bg-white border border-gray-300 rounded-xl font-semibold flex items-center justify-center gap-2"
+            >
+              <img
+                src="https://www.svgrepo.com/show/475656/google-color.svg"
+                className="w-5 h-5"
+              />
+              Sign in with Google
+            </button>
+
             <p className="text-center text-gray-600 text-sm mt-2">
               Don't have an account?{' '}
-              <Link href="/register" className="text-blue-600 hover:underline">
+              <Link to="/register" className="text-blue-600 hover:underline">
                 Register
               </Link>
             </p>

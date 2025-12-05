@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import useAuth from '../../hooks/useAuth'
-import { Link } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router'
 import axios from 'axios'
 
 function Register() {
@@ -12,6 +12,8 @@ function Register() {
   } = useForm()
 
   const { registerUser, signInWithGoogle, updateUserProfile } = useAuth()
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const handleRegistration = (data) => {
     console.log(data)
@@ -24,19 +26,19 @@ function Register() {
         const imgURLAPI = `https://api.imgbb.com/1/upload?key=${
           import.meta.env.VITE_image_host
         }`
-        axios.post(imgURLAPI, formData)
-        .then(res=>{
+        axios.post(imgURLAPI, formData).then((res) => {
           const userProfile = {
             displayName: data.name,
             photoURL: res.data.data.url,
           }
           updateUserProfile(userProfile)
-          .then(()=>{
-            console.log('user profile updated')
-          })
-          .catch(error=>{
-            console.log(error)
-          })
+            .then(() => {
+              console.log('user profile updated')
+              navigate(location?.state || '/')
+            })
+            .catch((error) => {
+              console.log(error)
+            })
         })
       })
       .catch((error) => {
@@ -148,7 +150,11 @@ function Register() {
 
             <p className="text-center text-gray-600">
               Already have an account?{' '}
-              <Link to="/login" className="text-blue-600 hover:underline">
+              <Link
+                state={location.state}
+                to="/login"
+                className="text-blue-600 hover:underline"
+              >
                 Login
               </Link>
             </p>

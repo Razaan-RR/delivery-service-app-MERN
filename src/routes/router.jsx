@@ -1,33 +1,41 @@
-import {
-  createBrowserRouter,
-} from "react-router";
-import RootLayout from "../layouts/RootLayout";
-import Home from "../pages/Home/HomeFiles/Home";
-import Coverage from "../pages/Coverage/Coverage";
-import AuthLayout from "../layouts/AuthLayout";
-import Login from "../pages/Auth/Login";
-import Register from "../pages/Auth/Register";
+import { createBrowserRouter } from 'react-router'
+import RootLayout from '../layouts/RootLayout'
+import Home from '../pages/Home/HomeFiles/Home'
+import Coverage from '../pages/Coverage/Coverage'
+import AuthLayout from '../layouts/AuthLayout'
+import Login from '../pages/Auth/Login'
+import Register from '../pages/Auth/Register'
+import Rider from '../pages/Rider/Rider'
+import PrivateRoutes from '../pages/Shared/PrivateRoutes'
 
 export let router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     Component: RootLayout,
-    children:[
-        {
-            index: true,
-            Component: Home,
-        },
-        {
-            path:'coverage',
-            Component: Coverage,
-            loader: ()=>fetch('/locations.json').then(res=>res.json())
-        }
-    ]
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: 'coverage',
+        Component: Coverage,
+        loader: () => fetch('/locations.json').then((res) => res.json()),
+      },
+      {
+        path: 'rider',
+        element: (
+          <PrivateRoutes>
+            <Rider></Rider>
+          </PrivateRoutes>
+        ),
+      },
+    ],
   },
   {
-    path: "/",
+    path: '/',
     Component: AuthLayout,
-    children:[
+    children: [
       {
         path: 'login',
         Component: Login,
@@ -35,8 +43,7 @@ export let router = createBrowserRouter([
       {
         path: 'register',
         Component: Register,
-      }
-    ]
-  }
-]);
-
+      },
+    ],
+  },
+])

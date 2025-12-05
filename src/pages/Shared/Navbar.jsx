@@ -42,13 +42,11 @@ function Navbar() {
               <li>
                 <NavLink to="/">Home</NavLink>
               </li>
-
               <li>
                 <NavLink to="/coverage">Coverage</NavLink>
               </li>
-
               <li>
-                <a>Item 2</a>
+                <NavLink to="/rider">Be a Rider</NavLink>
               </li>
             </ul>
           </div>
@@ -63,7 +61,7 @@ function Navbar() {
               <NavLink to="/coverage">Coverage</NavLink>
             </li>
             <li>
-              <a>Item 2</a>
+              <NavLink to="/rider">Be a Rider</NavLink>
             </li>
           </ul>
         </div>

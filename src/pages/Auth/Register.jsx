@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form'
 import useAuth from '../../hooks/useAuth'
 import { Link } from 'react-router'
+import axios from 'axios'
 
 function Register() {
   const {
@@ -10,13 +11,33 @@ function Register() {
     formState: { errors },
   } = useForm()
 
-  const { registerUser, signInWithGoogle } = useAuth()
+  const { registerUser, signInWithGoogle, updateUserProfile } = useAuth()
 
   const handleRegistration = (data) => {
     console.log(data)
+    const profileImg = data.photo[0]
     registerUser(data.email, data.password)
       .then((result) => {
         console.log(result.user)
+        const formData = new FormData()
+        formData.append('image', profileImg)
+        const imgURLAPI = `https://api.imgbb.com/1/upload?key=${
+          import.meta.env.VITE_image_host
+        }`
+        axios.post(imgURLAPI, formData)
+        .then(res=>{
+          const userProfile = {
+            displayName: data.name,
+            photoURL: res.data.data.url,
+          }
+          updateUserProfile(userProfile)
+          .then(()=>{
+            console.log('user profile updated')
+          })
+          .catch(error=>{
+            console.log(error)
+          })
+        })
       })
       .catch((error) => {
         console.log(error)
@@ -62,6 +83,18 @@ function Register() {
               />
               {errors.name?.type === 'required' && (
                 <p className="text-red-500 text-sm">Name is required</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="file"
+                {...register('photo', { required: true })}
+                placeholder="Photo"
+                className="file-input w-full h-13 px-4 py-3 border rounded-xl bg-white/70 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              />
+              {errors.name?.type === 'required' && (
+                <p className="text-red-500 text-sm">Photo is required</p>
               )}
             </div>
 

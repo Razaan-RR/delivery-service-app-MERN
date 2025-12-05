@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import useAuth from '../../hooks/useAuth'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Login() {
   const {
@@ -11,12 +11,14 @@ function Login() {
   } = useForm()
 
   const { login, signInWithGoogle } = useAuth()
+  const navigate = useNavigate()
 
   const handlelogin = (data) => {
     console.log(data)
     login(data.email, data.password)
       .then((result) => {
         console.log(result.user)
+        navigate('/')
       })
       .catch((error) => {
         console.log(error)
@@ -27,6 +29,7 @@ function Login() {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user)
+        navigate('/')
       })
       .catch((error) => {
         console.log(error)

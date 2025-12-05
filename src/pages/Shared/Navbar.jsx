@@ -1,10 +1,21 @@
 import { NavLink } from 'react-router-dom'
 import Logo from './Logo'
+import useAuth from '../../hooks/useAuth'
 
 function Navbar() {
+  const { user, logOut } = useAuth()
+
+  const handLogout = () => {
+    logOut()
+      .then()
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
   return (
     <div>
-      <div className="navbar bg-white/10 backdrop-blur-2xl border-b border-white/20 shadow-lg">
+      <div className="navbar px-10 bg-white/10 backdrop-blur-2xl border-b border-white/20 shadow-lg">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -57,8 +68,20 @@ function Navbar() {
           </ul>
         </div>
         <div className="navbar-end gap-3">
-          <NavLink to='/login' className="btn bg-green-300">Login</NavLink>
-          <NavLink to='/register' className="btn bg-blue-300">Register</NavLink>
+          {user ? (
+            <button onClick={handLogout} className="btn bg-red-300">
+              Logout
+            </button>
+          ) : (
+            <>
+              <NavLink to="/login" className="btn bg-green-300">
+                Login
+              </NavLink>
+              <NavLink to="/register" className="btn bg-blue-300">
+                Register
+              </NavLink>
+            </>
+          )}
         </div>
       </div>
     </div>
